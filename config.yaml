@@ -15,7 +15,13 @@ retrieval:
   methods: ["bm25", "dense", "tfidf"]
   top_k: [1, 3, 5, 10]
 
-# تنظیمات ارزیابی
+# تنظیمات ارزیابی (بهینه شده برای سرعت)
 evaluation:
-  test_size: 0.2
-  batch_size: 32
+  test_size: 0.1  # کمتر برای سرعت
+  batch_size: 16  # کوچکتر برای کم کردن memory usage
+
+# تنظیمات آموزش
+training:
+  epochs: 1        # کم برای تست سریع
+  warmup_steps: 50 # کمتر
+  max_train_samples: 5000  # محدود کردن داده‌ها برای سرعت
