@@ -5,6 +5,10 @@ import re
 from hazm import Normalizer, WordTokenizer, SentenceTokenizer
 from typing import List, Dict, Any
 import os
+import warnings
+
+warnings.filterwarnings("ignore")
+os.environ['HF_HUB_DISABLE_SYMLINKS_WARNING'] = '1'
 
 class PersianTextProcessor:
     def __init__(self):
