@@ -89,3 +89,96 @@ Results saved to results/phase1_training_results.json
 
 ✓ Phase 1 completed successfully!
 Trained models available for next phase: ['sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2', 'sentence-transformers/distiluse-base-multilingual-cased-v2', 'intfloat/multilingual-e5-base']
+
+WARNING:torchao.kernel.intmm:Warning: Detected no triton, on systems without Triton certain kernels will not work
+W0830 10:23:09.837000 17380 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+=== PHASE 1: Data Loading and Embedding Training ===
+
+Step 1: Loading datasets...
+Loading Persian QA datasets...
+Loading pquad dataset...
+Loading persian_qa dataset...
+PQuad loaded: 63994 train, 7976 val
+Persian QA loaded: 9008 samples
+Preparing QA data for training...
+Prepared 39751 QA pairs for training
+Split: 35775 train, 3976 test
+Processed data saved to data/processed/train_data.csv
+Processed data saved to data/processed/test_data.csv
+✓ Data preparation completed: 35775 train, 3976 test
+
+Step 2: Fine-tuning embedding models...
+
+--- Training Model 1/3: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 ---
+Loaded model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Preparing training examples...
+Created 72550 training examples
+Created 150 evaluation examples
+Fine-tuning sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2...
+Training examples: 72550
+Epochs: 1, Batch size: 16
+{'loss': 0.0311, 'grad_norm': 0.06896523386240005, 'learning_rate': 1.8200270635994587e-05, 'epoch': 0.11025358324145534}
+{'loss': 0.0148, 'grad_norm': 0.06685410439968109, 'learning_rate': 1.5944970681100587e-05, 'epoch': 0.2205071664829107}
+{'loss': 0.014, 'grad_norm': 0.04262080416083336, 'learning_rate': 1.3689670726206587e-05, 'epoch': 0.33076074972436603}
+{'loss': 0.0115, 'grad_norm': 0.2977691888809204, 'learning_rate': 1.1434370771312586e-05, 'epoch': 0.4410143329658214}
+{'loss': 0.0121, 'grad_norm': 0.13886646926403046, 'learning_rate': 9.179070816418584e-06, 'epoch': 0.5512679162072768}
+{'loss': 0.0114, 'grad_norm': 0.029544079676270485, 'learning_rate': 6.923770861524583e-06, 'epoch': 0.6615214994487321}
+{'loss': 0.0101, 'grad_norm': 0.2917037606239319, 'learning_rate': 4.6684709066305826e-06, 'epoch': 0.7717750826901875}
+{'loss': 0.0104, 'grad_norm': 0.02454974874854088, 'learning_rate': 2.4131709517365813e-06, 'epoch': 0.8820286659316428}
+{'loss': 0.0103, 'grad_norm': 0.24099670350551605, 'learning_rate': 1.5787099684258008e-07, 'epoch': 0.9922822491730982}
+{'train_runtime': 627.7852, 'train_samples_per_second': 115.565, 'train_steps_per_second': 7.224, 'train_loss': 0.013974970073132163, 'epoch': 1.0}
+✓ Fine-tuning completed! Model saved to models/paraphrase-multilingual-MiniLM-L12-v2_finetuned
+✓ sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2 training completed in 654.2s
+
+--- Training Model 2/3: sentence-transformers/distiluse-base-multilingual-cased-v2 ---
+Loaded model: sentence-transformers/distiluse-base-multilingual-cased-v2
+Preparing training examples...
+Created 72550 training examples
+Created 150 evaluation examples
+Fine-tuning sentence-transformers/distiluse-base-multilingual-cased-v2...
+Training examples: 72550
+Epochs: 1, Batch size: 16
+{'loss': 0.0357, 'grad_norm': 0.05208353325724602, 'learning_rate': 1.8200270635994587e-05, 'epoch': 0.11025358324145534}
+{'loss': 0.0138, 'grad_norm': 0.5950457453727722, 'learning_rate': 1.5944970681100587e-05, 'epoch': 0.2205071664829107}
+{'loss': 0.0111, 'grad_norm': 0.11950892210006714, 'learning_rate': 1.3689670726206587e-05, 'epoch': 0.33076074972436603}
+{'loss': 0.0119, 'grad_norm': 0.0385858379304409, 'learning_rate': 1.1434370771312586e-05, 'epoch': 0.4410143329658214}
+{'loss': 0.0123, 'grad_norm': 0.04809321463108063, 'learning_rate': 9.179070816418584e-06, 'epoch': 0.5512679162072768}
+{'loss': 0.0119, 'grad_norm': 0.03438084200024605, 'learning_rate': 6.923770861524583e-06, 'epoch': 0.6615214994487321}
+{'loss': 0.0132, 'grad_norm': 0.04311568662524223, 'learning_rate': 4.6684709066305826e-06, 'epoch': 0.7717750826901875}
+{'loss': 0.0099, 'grad_norm': 0.1368165910243988, 'learning_rate': 2.4131709517365813e-06, 'epoch': 0.8820286659316428}
+{'loss': 0.0125, 'grad_norm': 0.41129058599472046, 'learning_rate': 1.5787099684258008e-07, 'epoch': 0.9922822491730982}
+{'train_runtime': 788.5397, 'train_samples_per_second': 92.006, 'train_steps_per_second': 5.751, 'train_loss': 0.01461089317663239, 'epoch': 1.0}
+✓ Fine-tuning completed! Model saved to models/distiluse-base-multilingual-cased-v2_finetuned
+✓ sentence-transformers/distiluse-base-multilingual-cased-v2 training completed in 806.2s
+
+--- Training Model 3/3: intfloat/multilingual-e5-base ---
+Loaded model: intfloat/multilingual-e5-base
+Preparing training examples...
+Created 72550 training examples
+Created 150 evaluation examples
+Fine-tuning intfloat/multilingual-e5-base...
+Training examples: 72550
+Epochs: 1, Batch size: 16
+{'loss': 0.0146, 'grad_norm': 0.08968808501958847, 'learning_rate': 1.8200270635994587e-05, 'epoch': 0.11025358324145534}
+{'loss': 0.0128, 'grad_norm': 0.09711254388093948, 'learning_rate': 1.5944970681100587e-05, 'epoch': 0.2205071664829107}
+{'loss': 0.01, 'grad_norm': 0.04840480536222458, 'learning_rate': 1.3689670726206587e-05, 'epoch': 0.33076074972436603}
+{'loss': 0.0108, 'grad_norm': 0.021030494943261147, 'learning_rate': 1.1434370771312586e-05, 'epoch': 0.4410143329658214}
+{'loss': 0.011, 'grad_norm': 0.029566660523414612, 'learning_rate': 9.179070816418584e-06, 'epoch': 0.5512679162072768}
+{'loss': 0.0113, 'grad_norm': 0.5149836540222168, 'learning_rate': 6.923770861524583e-06, 'epoch': 0.6615214994487321}
+{'loss': 0.0088, 'grad_norm': 0.05321258306503296, 'learning_rate': 4.6684709066305826e-06, 'epoch': 0.7717750826901875}
+{'loss': 0.0102, 'grad_norm': 0.7451947331428528, 'learning_rate': 2.4131709517365813e-06, 'epoch': 0.8820286659316428}
+{'loss': 0.0101, 'grad_norm': 0.0534990131855011, 'learning_rate': 1.5787099684258008e-07, 'epoch': 0.9922822491730982}
+{'train_runtime': 2671.9954, 'train_samples_per_second': 27.152, 'train_steps_per_second': 1.697, 'train_loss': 0.011070575058263086, 'epoch': 1.0}
+✓ Fine-tuning completed! Model saved to models/multilingual-e5-base_finetuned
+✓ intfloat/multilingual-e5-base training completed in 2715.6s
+
+=== PHASE 1 RESULTS ===
+✓ sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2: 654.2s
+✓ sentence-transformers/distiluse-base-multilingual-cased-v2: 806.2s
+✓ intfloat/multilingual-e5-base: 2715.6s
+
+Summary: 3 successful, 0 failed
+Results saved to results/phase1_training_results.json
+
+✓ Phase 1 completed successfully!
+Trained models available for next phase: ['sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2', 'sentence-transformers/distiluse-base-multilingual-cased-v2', 'intfloat/multilingual-e5-base']  

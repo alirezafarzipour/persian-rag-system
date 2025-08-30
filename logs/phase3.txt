@@ -107,3 +107,122 @@ Results saved to results/phase3_pdf_processing_results.json
   - results/phase3_pdf_processing_results.json
 
 ✅ Phase 3 executed successfully!
+
+W0830 10:10:55.118000 34952 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+=== PHASE 3: PDF Chunking and Vector DB (Memory Optimized) ===
+
+✓ GPU Available: NVIDIA GeForce RTX 3060 (12.0GB)
+Step 1: Extracting text from PDF...
+Extracting text from data/raw/Drugs.pdf
+Extracted 69842 characters from PDF
+✓ Extracted 69842 characters from PDF
+
+Step 2: Chunking PDF text...
+Processing PDF document with memory-optimized chunking...
+PDF text length: 69842 characters
+
+--- Word-based chunking ---
+Performing memory-optimized word-based chunking...
+  Processed segment 1, chunks so far: 83
+  Processed segment 1, chunks so far: 125
+✓ Created 125 word-based chunks
+
+--- Sentence-based chunking ---
+Performing memory-optimized sentence-based chunking...
+  Processed segment 1
+✓ Created 121 sentence-based chunks
+
+✓ PDF processing completed:
+  - Total characters: 69842
+  - Estimated total words: 12789
+  - Word-based chunks: 125
+  - Sentence-based chunks: 121
+
+Chunking Results:
+  Word chunks: 125
+  Sentence chunks: 121
+✓ Chunks saved to data/processed/drugs_word_chunks.csv
+✓ Chunks saved to data/processed/drugs_sentence_chunks.csv
+
+📊 CHUNKING STATISTICS:
+Word-based chunks: {'total_chunks': 125, 'avg_words_per_chunk': 149.336, 'min_words_per_chunk': 92, 'max_words_per_chunk': 150, 'total_words': 18667, 'chunk_type': 'word_based'}
+Sentence-based chunks: {'total_chunks': 121, 'avg_words_per_chunk': 105.69421487603306, 'min_words_per_chunk': 29, 'max_words_per_chunk': 407, 'total_words': 12789, 'chunk_type': 'sentence_based'}       
+
+Step 3: Loading best embedding model...
+✓ Using trained model: distiluse-base-multilingual-cased-v2_finetuned
+✓ Model loaded on cuda
+
+Step 4: Generating embeddings with memory optimization...
+  Generating word-based embeddings...
+Generating embeddings for 125 texts...
+✓ Generated embeddings shape: (125, 512)
+  Generating sentence-based embeddings...
+Generating embeddings for 121 texts...
+✓ Generated embeddings shape: (121, 512)
+✓ Generated word embeddings: (125, 512)
+✓ Generated sentence embeddings: (121, 512)
+
+Step 5: Setting up FAISS indexes...
+  Creating FAISS index for word-based chunks...
+Setting up FAISS index for 125 embeddings...
+  Adding embeddings to index...
+✓ FAISS index created successfully
+  Creating FAISS index for sentence-based chunks...
+Setting up FAISS index for 121 embeddings...
+  Adding embeddings to index...
+✓ FAISS index created successfully
+✓ Word FAISS index saved
+✓ Sentence FAISS index saved
+✓ FAISS setup completed in 0.00s
+
+Step 6: Setting up Chroma collections...
+  Creating Chroma collection for word-based chunks...
+Setting up Chroma collection: drugs_word_chunks
+  Previous collection deleted
+  Adding 125 documents in 1 batches...
+✓ Chroma collection 'drugs_word_chunks' created with 125 items
+  Creating Chroma collection for sentence-based chunks...
+Setting up Chroma collection: drugs_sentence_chunks
+  Previous collection deleted
+  Adding 121 documents in 1 batches...
+✓ Chroma collection 'drugs_sentence_chunks' created with 121 items
+✓ Chroma setup completed in 1.65s
+
+Step 7: Testing index quality...
+✓ Word FAISS search test completed
+  Top 3 distances: [0.27873075 0.37690514 0.39904034]
+✓ Sentence FAISS search test completed
+  Top 3 distances: [0.3322068  0.4418366  0.44654197]
+Error testing word Chroma: Collection expecting embedding with dimension of 512, got 384
+Error testing sentence Chroma: Collection expecting embedding with dimension of 512, got 384
+
+Step 8: Saving results and statistics...
+Results saved to results/phase3_pdf_processing_results.json
+
+==================================================
+🎉 PHASE 3 COMPLETED!
+✅ Device used: cuda
+✅ Word chunks: 125 chunks
+✅ Sentence chunks: 121 chunks
+✅ Word chunks: 125 chunks
+✅ Sentence chunks: 121 chunks
+✅ Sentence chunks: 121 chunks
+✅ Total memory used: 0.5 MB
+✅ Total memory used: 0.5 MB
+✅ FAISS indexes: Word=True, Sentence=True
+✅ FAISS indexes: Word=True, Sentence=True
+✅ Chroma collections: Word=True, Sentence=True
+✅ Chroma collections: Word=True, Sentence=True
+✅ All results saved to results/
+✅ All results saved to results/
+
+
+📁 FILES CREATED:
+  - data/processed/drugs_word_chunks.csv
+  - data/processed/drugs_sentence_chunks.csv
+  - results/faiss/drugs_word_chunks.index
+  - results/faiss/drugs_sentence_chunks.index
+  - chroma_db/ (Chroma database directory)
+  - results/phase3_pdf_processing_results.json
+
+✅ Phase 3 executed successfully!

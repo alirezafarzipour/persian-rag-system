@@ -1,0 +1,175 @@
+W0830 12:31:45.333000 10088 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+=== PHASE 4: RAG Evaluation with BM25 and TF-IDF Methods ===
+
+Checking prerequisites...
+✓ All prerequisites check passed
+Testing connection to LLaMA server at http://127.0.0.1:8080...
+✓ Connected to LLaMA server at http://127.0.0.1:8080
+✓ LLaMA server is responding correctly
+  Test response: ، من به‌طور کلی به‌عنوان یک...
+Loading test data...
+Using sample of 100 questions from 3976 total
+
+Methods to evaluate: BM25, TFIDF
+✓ Connected to LLaMA server at http://127.0.0.1:8080
+
+============================================================
+EVALUATING WITH WORD CHUNKS
+============================================================
+
+Method 1/2: BM25
+--------------------------------------------------
+
+=== Evaluating BM25 Method ===
+Loading chunks from data/processed/drugs_word_chunks.csv...
+✓ Loaded 125 chunks
+Building BM25 index...
+✓ BM25 index built successfully
+
+=== Evaluating RAG with bm25 ===
+  Processing 1/100 questions...
+  Processing 26/100 questions...
+  Processing 51/100 questions...
+  Processing 76/100 questions...
+✓ bm25 RAG evaluation completed
+  Success rate: 1.000
+  F1 Score: 0.036
+  BLEU Score: 0.000
+  Semantic Similarity: 0.323
+  Average total time: 1.050s
+
+📊 BM25 Results Summary:
+  f1_score: 0.0359
+  bleu_score: 0.0000
+  exact_match: 0.0000
+  success_rate: 1.0000
+  total_time: 1.0496
+
+Method 2/2: TFIDF
+--------------------------------------------------
+
+=== Evaluating TFIDF Method ===
+Loading chunks from data/processed/drugs_word_chunks.csv...
+✓ Loaded 125 chunks
+Building TF-IDF index...
+✓ TF-IDF index built successfully
+
+=== Evaluating RAG with tfidf ===
+  Processing 1/100 questions...
+  Processing 26/100 questions...
+  Processing 51/100 questions...
+  Processing 76/100 questions...
+✓ tfidf RAG evaluation completed
+  Success rate: 1.000
+  F1 Score: 0.043
+  BLEU Score: 0.000
+  Semantic Similarity: 0.320
+  Average total time: 1.084s
+
+📊 TFIDF Results Summary:
+  f1_score: 0.0429
+  bleu_score: 0.0000
+  exact_match: 0.0000
+  success_rate: 1.0000
+  total_time: 1.0836
+
+============================================================
+EVALUATING WITH SENTENCE CHUNKS
+============================================================
+
+Method 1/2: BM25
+--------------------------------------------------
+
+=== Evaluating BM25 Method ===
+Loading chunks from data/processed/drugs_sentence_chunks.csv...
+✓ Loaded 121 chunks
+Building BM25 index...
+✓ BM25 index built successfully
+
+=== Evaluating RAG with bm25 ===
+  Processing 1/100 questions...
+  Processing 26/100 questions...
+  Processing 51/100 questions...
+  Processing 76/100 questions...
+✓ bm25 RAG evaluation completed
+  Success rate: 1.000
+  F1 Score: 0.050
+  BLEU Score: 0.000
+  Semantic Similarity: 0.316
+  Average total time: 1.188s
+
+📊 BM25 Results Summary:
+  f1_score: 0.0498
+  bleu_score: 0.0000
+  exact_match: 0.0000
+  success_rate: 1.0000
+  total_time: 1.1876
+
+Method 2/2: TFIDF
+--------------------------------------------------
+
+=== Evaluating TFIDF Method ===
+Loading chunks from data/processed/drugs_sentence_chunks.csv...
+✓ Loaded 121 chunks
+Building TF-IDF index...
+✓ TF-IDF index built successfully
+
+=== Evaluating RAG with tfidf ===
+  Processing 1/100 questions...
+  Processing 26/100 questions...
+  Processing 51/100 questions...
+  Processing 76/100 questions...
+✓ tfidf RAG evaluation completed
+  Success rate: 1.000
+  F1 Score: 0.051
+  BLEU Score: 0.000
+  Semantic Similarity: 0.336
+  Average total time: 1.166s
+
+📊 TFIDF Results Summary:
+  f1_score: 0.0510
+  bleu_score: 0.0000
+  exact_match: 0.0000
+  success_rate: 1.0000
+  total_time: 1.1655
+
+============================================================
+FINAL RESULTS SUMMARY
+============================================================
+
+🏆 Best Methods for word chunks:
+  f1_score: tfidf (0.0429)
+  bleu_score: bm25 (0.0000)
+  success_rate: bm25 (1.0000)
+
+🏆 Best Methods for sentence chunks:
+  f1_score: tfidf (0.0510)
+  bleu_score: bm25 (0.0000)
+  success_rate: bm25 (1.0000)
+
+============================================================
+BM25 vs TF-IDF COMPARISON
+============================================================
+
+📈 BM25 Performance:
+  word chunks - F1: 0.0359, BLEU: 0.0000, Success: 1.0000
+  sentence chunks - F1: 0.0498, BLEU: 0.0000, Success: 1.0000
+
+📈 TFIDF Performance:
+  word chunks - F1: 0.0429, BLEU: 0.0000, Success: 1.0000
+  sentence chunks - F1: 0.0510, BLEU: 0.0000, Success: 1.0000
+✓ Evaluation results saved to results/phase4_bm25_tfidf_evaluation_20250830_124114.json
+
+✓ Phase 4 BM25/TF-IDF evaluation completed successfully!
+📁 Results saved to:
+  - phase4_bm25_tfidf_evaluation_20250830_124114.json
+  - results/phase4_bm25_tfidf_report_20250830_124114.md
+
+📈 Performance Summary:
+  Total methods evaluated: 2
+  Total questions processed: 100
+  Chunk types tested: 2
+  Best word F1: tfidf (0.0429)
+  Best sentence F1: tfidf (0.0510)
+
+🎉 BM25 & TF-IDF RAG evaluation completed successfully!

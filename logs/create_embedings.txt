@@ -1,0 +1,381 @@
+WARNING:torchao.kernel.intmm:Warning: Detected no triton, on systems without Triton certain kernels will not work
+W0830 01:13:48.449000 12292 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+=== Creating Individual Model Embeddings ===
+
+Found 7 embedding models:
+  1. distiluse-base-multilingual-cased-v2_finetuned 
+     Existing indices: word: ✗, sentence: ✗
+  2. multilingual-e5-base_finetuned
+     Existing indices: word: ✗, sentence: ✗
+  3. paraphrase-multilingual-MiniLM-L12-v2_finetuned
+     Existing indices: word: ✗, sentence: ✗
+  4. paraphrase-multilingual-MiniLM-L12-v2
+     Existing indices: word: ✗, sentence: ✗
+  5. distiluse-base-multilingual-cased-v2
+     Existing indices: word: ✗, sentence: ✗
+  6. multilingual-e5-base
+     Existing indices: word: ✗, sentence: ✗
+  7. paraphrase-multilingual-mpnet-base-v2
+     Existing indices: word: ✗, sentence: ✗
+
+Processing models...
+
+============================================================
+Processing Model 1/7: distiluse-base-multilingual-cased-v2_finetuned
+============================================================
+
+--- Creating word embeddings for distiluse-base-multilingual-cased-v2_finetuned ---
+Loading embedding model: models\distiluse-base-multilingual-cased-v2_finetuned
+Using device: cuda
+Loading chunks from data/processed/drugs_word_chunks.csv
+Processing 126 chunks...
+  Progress: 32/126 (25.4%) - Elapsed: 0.2s - ETA: 0.6s
+Created embeddings shape: (126, 512)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/distiluse-base-multilingual-cased-v2_finetuned_drugs_word_chunks.index
+  Total time: 0.54s
+  Index size: 126 vectors, 512 dimensions
+✅ Completed word chunks for distiluse-base-multilingual-cased-v2_finetuned
+
+--- Creating sentence embeddings for distiluse-base-multilingual-cased-v2_finetuned ---
+Loading embedding model: models\distiluse-base-multilingual-cased-v2_finetuned
+Using device: cuda
+Loading chunks from data/processed/drugs_sentence_chunks.csv
+Processing 121 chunks...
+  Progress: 32/121 (26.4%) - Elapsed: 0.1s - ETA: 0.2s
+Created embeddings shape: (121, 512)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/distiluse-base-multilingual-cased-v2_finetuned_drugs_sentence_chunks.index
+  Total time: 0.36s
+  Index size: 121 vectors, 512 dimensions
+✅ Completed sentence chunks for distiluse-base-multilingual-cased-v2_finetuned
+
+Overall Progress: 2/14 (14.3%)
+Completed: 2, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 2/7: multilingual-e5-base_finetuned
+============================================================
+
+--- Creating word embeddings for multilingual-e5-base_finetuned ---
+Loading embedding model: models\multilingual-e5-base_finetuned
+Using device: cuda
+Loading chunks from data/processed/drugs_word_chunks.csv
+Processing 126 chunks...
+  Progress: 32/126 (25.4%) - Elapsed: 0.6s - ETA: 1.9s
+Created embeddings shape: (126, 768)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/multilingual-e5-base_finetuned_drugs_word_chunks.index
+  Total time: 1.96s
+  Index size: 126 vectors, 768 dimensions
+✅ Completed word chunks for multilingual-e5-base_finetuned
+
+--- Creating sentence embeddings for multilingual-e5-base_finetuned ---
+Loading embedding model: models\multilingual-e5-base_finetuned
+Using device: cuda
+Loading chunks from data/processed/drugs_sentence_chunks.csv
+Processing 121 chunks...
+  Progress: 32/121 (26.4%) - Elapsed: 0.7s - ETA: 1.8s
+Created embeddings shape: (121, 768)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/multilingual-e5-base_finetuned_drugs_sentence_chunks.index
+  Total time: 2.31s
+  Index size: 121 vectors, 768 dimensions
+✅ Completed sentence chunks for multilingual-e5-base_finetuned
+
+Overall Progress: 4/14 (28.6%)
+Completed: 4, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 3/7: paraphrase-multilingual-MiniLM-L12-v2_finetuned
+============================================================
+
+--- Creating word embeddings for paraphrase-multilingual-MiniLM-L12-v2_finetuned ---
+Loading embedding model: models\paraphrase-multilingual-MiniLM-L12-v2_finetuned
+Using device: cuda
+Loading chunks from data/processed/drugs_word_chunks.csv
+Processing 126 chunks...
+  Progress: 32/126 (25.4%) - Elapsed: 0.1s - ETA: 0.2s
+Created embeddings shape: (126, 384)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/paraphrase-multilingual-MiniLM-L12-v2_finetuned_drugs_word_chunks.index
+  Total time: 0.30s
+  Index size: 126 vectors, 384 dimensions
+✅ Completed word chunks for paraphrase-multilingual-MiniLM-L12-v2_finetuned
+
+--- Creating sentence embeddings for paraphrase-multilingual-MiniLM-L12-v2_finetuned ---
+Loading embedding model: models\paraphrase-multilingual-MiniLM-L12-v2_finetuned
+Using device: cuda
+Loading chunks from data/processed/drugs_sentence_chunks.csv
+Processing 121 chunks...
+  Progress: 32/121 (26.4%) - Elapsed: 0.1s - ETA: 0.4s
+Created embeddings shape: (121, 384)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/paraphrase-multilingual-MiniLM-L12-v2_finetuned_drugs_sentence_chunks.index
+  Total time: 0.46s
+  Index size: 121 vectors, 384 dimensions
+✅ Completed sentence chunks for paraphrase-multilingual-MiniLM-L12-v2_finetuned
+
+Overall Progress: 6/14 (42.9%)
+Completed: 6, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 4/7: paraphrase-multilingual-MiniLM-L12-v2
+============================================================
+
+--- Creating word embeddings for paraphrase-multilingual-MiniLM-L12-v2 ---
+Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Using device: cuda
+Loading chunks from data/processed/drugs_word_chunks.csv
+Processing 126 chunks...
+  Progress: 32/126 (25.4%) - Elapsed: 0.2s - ETA: 0.7s
+Created embeddings shape: (126, 384)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/paraphrase-multilingual-MiniLM-L12-v2_drugs_word_chunks.index
+  Total time: 0.49s
+  Index size: 126 vectors, 384 dimensions
+✅ Completed word chunks for paraphrase-multilingual-MiniLM-L12-v2
+
+--- Creating sentence embeddings for paraphrase-multilingual-MiniLM-L12-v2 ---
+Loading embedding model: sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2
+Using device: cuda
+Loading chunks from data/processed/drugs_sentence_chunks.csv
+Processing 121 chunks...
+  Progress: 32/121 (26.4%) - Elapsed: 0.3s - ETA: 0.7s
+Created embeddings shape: (121, 384)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/paraphrase-multilingual-MiniLM-L12-v2_drugs_sentence_chunks.index
+  Total time: 0.50s
+  Index size: 121 vectors, 384 dimensions
+  Total time: 0.50s
+  Index size: 121 vectors, 384 dimensions
+  Index size: 121 vectors, 384 dimensions
+✅ Completed sentence chunks for paraphrase-multilingual-MiniLM-L12-v2
+
+
+Overall Progress: 8/14 (57.1%)
+Completed: 8, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 5/7: distiluse-base-multilingual-cased-v2
+============================================================
+
+--- Creating word embeddings for distiluse-base-multilingual-cased-v2 ---
+Loading embedding model: sentence-transformers/distiluse-base-multilingual-cased-v2
+Using device: cuda
+Loading chunks from data/processed/drugs_word_chunks.csv
+Processing 126 chunks...
+  Progress: 32/126 (25.4%) - Elapsed: 0.2s - ETA: 0.7s
+Created embeddings shape: (126, 512)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/distiluse-base-multilingual-cased-v2_drugs_word_chunks.index
+  Total time: 0.54s
+  Index size: 126 vectors, 512 dimensions
+✅ Completed word chunks for distiluse-base-multilingual-cased-v2
+
+--- Creating sentence embeddings for distiluse-base-multilingual-cased-v2 ---
+Loading embedding model: sentence-transformers/distiluse-base-multilingual-cased-v2
+Using device: cuda
+Loading chunks from data/processed/drugs_sentence_chunks.csv
+Processing 121 chunks...
+  Progress: 32/121 (26.4%) - Elapsed: 0.4s - ETA: 1.0s
+Created embeddings shape: (121, 512)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/distiluse-base-multilingual-cased-v2_drugs_sentence_chunks.index
+  Total time: 0.65s
+  Index size: 121 vectors, 512 dimensions
+✅ Completed sentence chunks for distiluse-base-multilingual-cased-v2
+
+Overall Progress: 10/14 (71.4%)
+Completed: 10, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 6/7: multilingual-e5-base
+============================================================
+
+--- Creating word embeddings for multilingual-e5-base ---
+Loading embedding model: intfloat/multilingual-e5-base
+Using device: cuda
+Loading chunks from data/processed/drugs_word_chunks.csv
+Processing 126 chunks...
+  Progress: 32/126 (25.4%) - Elapsed: 0.7s - ETA: 2.0s
+Created embeddings shape: (126, 768)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/multilingual-e5-base_drugs_word_chunks.index
+  Total time: 1.96s
+  Index size: 126 vectors, 768 dimensions
+✅ Completed word chunks for multilingual-e5-base
+
+--- Creating sentence embeddings for multilingual-e5-base ---
+Loading embedding model: intfloat/multilingual-e5-base
+Using device: cuda
+Loading chunks from data/processed/drugs_sentence_chunks.csv
+Processing 121 chunks...
+  Progress: 32/121 (26.4%) - Elapsed: 0.6s - ETA: 1.6s
+Created embeddings shape: (121, 768)
+Creating FAISS index...
+✓ Successfully created and saved FAISS index: results/faiss/multilingual-e5-base_drugs_sentence_chunks.index
+  Total time: 2.24s
+  Index size: 121 vectors, 768 dimensions
+✅ Completed sentence chunks for multilingual-e5-base
+
+Overall Progress: 12/14 (85.7%)
+Completed: 12, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 7/7: paraphrase-multilingual-mpnet-base-v2
+============================================================
+
+--- Creating word embeddings for paraphrase-multilingual-mpnet-base-v2 ---
+modules.json: 100%|██████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 229/229 [00:00<?, ?B/s] 
+C:\Users\alire\AppData\Roaming\Python\Python310\site-packages\huggingface_hub\file_download.py:143: UserWarning: `huggingface_hub` cache-system uses symlinks by default to efficiently store duplicated files but your machine does not support them in C:\Users\alire\.cache\huggingface\hub\models--sentence-transformers--paraphrase-multilingual-mpnet-base-v2. Caching files will still work but in a degraded version that might require more space on your disk. This warning can be disabled by setting the `HF_HUB_DISABLE_SYMLINKS_WARNING` environment variable. For more details, see https://huggingface.co/docs/huggingface_hub/how-to-cache#limitations.
+To support symlinks on Windows, you either need to activate Developer Mode or to run Python as an administrator. In order to activate developer mode, see this article: https://docs.microsoft.com/en-us/windows/apps/get-started/enable-your-device-for-development
+  warnings.warn(message)
+config_sentence_transformers.json: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 122/122 [00:00<?, ?B/s] 
+README.md: 5.12kB [00:00, 4.57MB/s]
+sentence_bert_config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 53.0/53.0 [00:00<?, ?B/s] 
+config.json: 100%|███████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 723/723 [00:00<?, ?B/s] 
+model.safetensors:   0%|                                                                                                                                                      | 0.00/1.11G [00:00<?, ?B/s]Cancellation requested; stopping current tasks.
+model.safetensors:   0%|                                                                                                                                                      | 0.00/1.11G [01:36<?, ?B/s] 
+
+⚠ Process interrupted by user
+PS C:\Users\alire\Desktop\persian-rag-system> 
+PS C:\Users\alire\Desktop\persian-rag-system> & "C:/Program Files/Python310/python.exe" c:/Users/alire/Desktop/persian-rag-system/src/create_embeddings.py
+WARNING:torchao.kernel.intmm:Warning: Detected no triton, on systems without Triton certain kernels will not work
+W0830 01:17:58.160000 32120 torch\distributed\elastic\multiprocessing\redirects.py:29] NOTE: Redirects are currently not supported in Windows or MacOs.
+=== Creating Individual Model Embeddings ===
+
+Found 6 embedding models:
+  1. distiluse-base-multilingual-cased-v2_finetuned
+     Existing indices: word: ✓, sentence: ✓
+  2. multilingual-e5-base_finetuned
+     Existing indices: word: ✓, sentence: ✓
+  3. paraphrase-multilingual-MiniLM-L12-v2_finetuned
+     Existing indices: word: ✓, sentence: ✓
+  4. paraphrase-multilingual-MiniLM-L12-v2
+     Existing indices: word: ✓, sentence: ✓
+  5. distiluse-base-multilingual-cased-v2
+     Existing indices: word: ✓, sentence: ✓
+  6. multilingual-e5-base
+     Existing indices: word: ✓, sentence: ✓
+
+Processing models...
+
+============================================================
+Processing Model 1/6: distiluse-base-multilingual-cased-v2_finetuned
+============================================================
+⏭ Skipping word chunks (already exists)
+⏭ Skipping sentence chunks (already exists)
+
+Overall Progress: 2/12 (16.7%)
+Completed: 2, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 2/6: multilingual-e5-base_finetuned
+============================================================
+⏭ Skipping word chunks (already exists)
+⏭ Skipping sentence chunks (already exists)
+
+Overall Progress: 4/12 (33.3%)
+Completed: 4, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 3/6: paraphrase-multilingual-MiniLM-L12-v2_finetuned
+============================================================
+⏭ Skipping word chunks (already exists)
+⏭ Skipping sentence chunks (already exists)
+
+Overall Progress: 6/12 (50.0%)
+Completed: 6, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 4/6: paraphrase-multilingual-MiniLM-L12-v2
+============================================================
+⏭ Skipping word chunks (already exists)
+⏭ Skipping sentence chunks (already exists)
+
+Overall Progress: 8/12 (66.7%)
+Completed: 8, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 5/6: distiluse-base-multilingual-cased-v2
+============================================================
+⏭ Skipping word chunks (already exists)
+⏭ Skipping sentence chunks (already exists)
+
+Overall Progress: 10/12 (83.3%)
+Completed: 10, Failed: 0
+Pausing before next model...
+
+============================================================
+Processing Model 6/6: multilingual-e5-base
+============================================================
+⏭ Skipping word chunks (already exists)
+⏭ Skipping sentence chunks (already exists)
+
+Overall Progress: 12/12 (100.0%)
+Completed: 12, Failed: 0
+
+============================================================
+EMBEDDING CREATION SUMMARY
+============================================================
+Total time: 15.06s (0.3 minutes)
+Models processed: 6
+Total tasks: 12
+Completed: 12
+Failed: 0
+Success rate: 100.0%
+
+🎉 All embeddings created successfully!
+You can now run Phase 4 evaluation with model-specific indices.
+
+📁 Created model-specific indices: 12
+  - distiluse-base-multilingual-cased-v2_drugs_sentence_chunks.index (0.2 MB)
+  - distiluse-base-multilingual-cased-v2_drugs_word_chunks.index (0.2 MB)
+  - distiluse-base-multilingual-cased-v2_finetuned_drugs_sentence_chunks.index (0.2 MB)
+  - distiluse-base-multilingual-cased-v2_finetuned_drugs_word_chunks.index (0.2 MB)
+  - multilingual-e5-base_drugs_sentence_chunks.index (0.4 MB)
+  - multilingual-e5-base_drugs_word_chunks.index (0.4 MB)
+  - multilingual-e5-base_finetuned_drugs_sentence_chunks.index (0.4 MB)
+  - multilingual-e5-base_finetuned_drugs_word_chunks.index (0.4 MB)
+  - paraphrase-multilingual-MiniLM-L12-v2_drugs_sentence_chunks.index (0.2 MB)
+  - paraphrase-multilingual-MiniLM-L12-v2_drugs_word_chunks.index (0.2 MB)
+  - paraphrase-multilingual-MiniLM-L12-v2_finetuned_drugs_sentence_chunks.index (0.2 MB)
+  - paraphrase-multilingual-MiniLM-L12-v2_finetuned_drugs_word_chunks.index (0.2 MB)
+
+=== Verifying Created Indices ===
+Verifying 12 model-specific indices...
+  ✓ distiluse-base-multilingual-cased-v2_drugs_sentence_chunks.index: 121 vectors, 512 dimensions
+    Test search: distance=178.0839
+  ✓ distiluse-base-multilingual-cased-v2_drugs_word_chunks.index: 126 vectors, 512 dimensions
+    Test search: distance=176.1925
+  ✓ distiluse-base-multilingual-cased-v2_finetuned_drugs_sentence_chunks.index: 121 vectors, 512 dimensions
+    Test search: distance=169.4079
+  ✓ distiluse-base-multilingual-cased-v2_finetuned_drugs_word_chunks.index: 126 vectors, 512 dimensions
+    Test search: distance=180.1893
+  ✓ multilingual-e5-base_drugs_sentence_chunks.index: 121 vectors, 768 dimensions
+    Test search: distance=256.5714
+  ✓ multilingual-e5-base_drugs_word_chunks.index: 126 vectors, 768 dimensions
+    Test search: distance=246.2278
+  ✓ multilingual-e5-base_finetuned_drugs_sentence_chunks.index: 121 vectors, 768 dimensions
+    Test search: distance=262.4246
+  ✓ multilingual-e5-base_finetuned_drugs_word_chunks.index: 126 vectors, 768 dimensions
+    Test search: distance=250.9421
+  ✓ paraphrase-multilingual-MiniLM-L12-v2_drugs_sentence_chunks.index: 121 vectors, 384 dimensions
+    Test search: distance=123.2397
+  ✓ paraphrase-multilingual-MiniLM-L12-v2_drugs_word_chunks.index: 126 vectors, 384 dimensions
+    Test search: distance=132.2306
+  ✓ paraphrase-multilingual-MiniLM-L12-v2_finetuned_drugs_sentence_chunks.index: 121 vectors, 384 dimensions
+    Test search: distance=155.5364
+  ✓ paraphrase-multilingual-MiniLM-L12-v2_finetuned_drugs_word_chunks.index: 126 vectors, 384 dimensions
+    Test search: distance=164.8210
