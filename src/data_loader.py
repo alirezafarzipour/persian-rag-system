@@ -48,24 +48,24 @@ class DataLoader:
         
         text = ""
         
-        try:
-            with pdfplumber.open(pdf_path) as pdf:
-                for page_num, page in enumerate(pdf.pages):
-                    page_text = page.extract_text()
-                    if page_text:
-                        text += page_text + "\n"
+        # try:
+        #     with pdfplumber.open(pdf_path) as pdf:
+        #         for page_num, page in enumerate(pdf.pages):
+        #             page_text = page.extract_text()
+        #             if page_text:
+        #                 text += page_text + "\n"
                         
-        except Exception as e:
-            print(f"pdfplumber failed: {e}, trying PyPDF2...")
+        # except Exception as e:
+        #     print(f"pdfplumber failed: {e}, trying PyPDF2...")
             
-            try:
-                with open(pdf_path, 'rb') as file:
-                    pdf_reader = PyPDF2.PdfReader(file)
-                    for page in pdf_reader.pages:
-                        text += page.extract_text() + "\n"
-            except Exception as e2:
-                print(f"PyPDF2 also failed: {e2}")
-                raise e2
+        try:
+            with open(pdf_path, 'rb') as file:
+                pdf_reader = PyPDF2.PdfReader(file)
+                for page in pdf_reader.pages:
+                    text += page.extract_text() + "\n"
+        except Exception as e2:
+            print(f"PyPDF2 also failed: {e2}")
+            raise e2
         
         # preprocess extract data
         processed_text = self.text_processor.normalize_text(text)
