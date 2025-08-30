@@ -1,10 +1,11 @@
 import requests
 import json
 import time
+import re
 from typing import List, Dict, Optional
 
 class LlamaClient:
-    """Cliemt for LLaMA 3.2 local server (llama.cpp)"""
+    """Enhanced Client for LLaMA 3.2 local server with improved response cleaning"""
     
     def __init__(self, base_url: str = "http://127.0.0.1:8080", timeout: int = 120):
         self.base_url = base_url.rstrip('/')
@@ -28,10 +29,56 @@ class LlamaClient:
             except:
                 return False
     
+    def clean_prediction(self, text: str) -> str:
+        """Enhanced cleaning for model predictions"""
+        if not text:
+            return ""
+        
+        # Remove special tokens and artifacts
+        text = re.sub(r'<\|[^|]*\|>', '', text)
+        text = re.sub(r'user[a-zA-Z]*', '', text)
+        text = re.sub(r'assistant[a-zA-Z]*', '', text)
+        text = re.sub(r'<[^>]*>', '', text)
+        
+        # Remove system prompts and repeated patterns
+        text = re.sub(r'system[:\s]*', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'human[:\s]*', '', text, flags=re.IGNORECASE)
+        text = re.sub(r'ai[:\s]*', '', text, flags=re.IGNORECASE)
+        
+        # Remove common Persian prompt artifacts
+        text = re.sub(r'بر اساس اطلاعات ارائه شده[،:]?\s*', '', text)
+        text = re.sub(r'با توجه به متن[،:]?\s*', '', text)
+        text = re.sub(r'طبق اطلاعات[،:]?\s*', '', text)
+        text = re.sub(r'پاسخ[:\s]*', '', text)
+        
+        # Remove repeated whitespace and clean up
+        text = re.sub(r'\s+', ' ', text).strip()
+        
+        # Remove incomplete sentences at the end
+        text = re.sub(r'\s+\.\.\.$', '', text)
+        
+        # If response contains multiple sentences, prioritize the most complete one
+        sentences = [s.strip() for s in text.split('.') if s.strip()]
+        if sentences:
+            # Find the longest meaningful sentence
+            best_sentence = max(sentences, key=lambda x: len(x) if len(x.split()) > 2 else 0)
+            if len(best_sentence) > 10:  # Minimum meaningful length
+                text = best_sentence
+            elif len(sentences) > 0:
+                text = sentences[0]
+        
+        # Final length check and truncation if needed
+        if len(text) > 100:
+            words = text.split()
+            if len(words) > 15:
+                text = ' '.join(words[:15])
+        
+        return text.strip()
+    
     def generate(self, prompt: str, max_tokens: int = 512, 
                 temperature: float = 0.1, top_p: float = 0.9,
                 stop: Optional[List[str]] = None) -> Optional[str]:
-        """Gen answer with LLaMA"""
+        """Generate answer with LLaMA and clean response"""
         
         payload = {
             "prompt": prompt,
@@ -39,17 +86,17 @@ class LlamaClient:
             "temperature": temperature,
             "top_p": top_p,
             "stream": False,
-            "stop": stop or ["</s>", "<|eot_id|>", "\n\nسوال:", "\n\nپرسش:"]
+            "stop": stop or ["</s>", "<|eot_id|>", "\n\nسوال:", "\n\nپرسش:", "Human:", "user:"]
         }
         
         try:
             response = self._try_completion_endpoint(payload)
             if response:
-                return response
+                return self.clean_prediction(response)
                 
             response = self._try_chat_endpoint(prompt, payload)
             if response:
-                return response
+                return self.clean_prediction(response)
             
             print("Could not get response from any endpoint")
             return None
@@ -129,9 +176,9 @@ class LlamaClient:
     
     def create_rag_prompt(self, question: str, contexts: List[str], 
                          max_context_length: int = 2000) -> str:
-        """Create prompt for RAG"""
+        """Create optimized prompt for RAG with better instructions"""
         
-        # ترکیب contexts
+        # Combine contexts more intelligently
         combined_context = ""
         current_length = 0
         
@@ -142,45 +189,53 @@ class LlamaClient:
             combined_context += context_text
             current_length += len(context_text)
         
-        # template فارسی برای RAG
-        prompt = f"""بر اساس اطلاعات ارائه شده، به سوال پاسخ دهید.
+        # Enhanced Persian template for RAG with clearer instructions
+        prompt = f"""بر اساس اطلاعات زیر، به سوال پاسخ کوتاه و دقیق دهید.
 
 اطلاعات مرجع:
 {combined_context.strip()}
 
 سوال: {question}
 
-پاسخ: بر اساس اطلاعات ارائه شده، """
+پاسخ کوتاه و مستقیم:"""
         
         return prompt
     
     def answer_question(self, question: str, contexts: List[str], 
-                       max_tokens: int = 256, temperature: float = 0.1) -> Optional[str]:
-        """Answering the question using RAG"""
+                       max_tokens: int = 128, temperature: float = 0.05) -> Optional[str]:
+        """Enhanced question answering using RAG with better parameters"""
         
         prompt = self.create_rag_prompt(question, contexts)
         
+        # Use more conservative parameters for better consistency
         response = self.generate(
             prompt=prompt,
             max_tokens=max_tokens,
-            temperature=temperature,
-            stop=["</s>", "<|eot_id|>", "\n\nسوال:", "\n\nپرسش:", "\n\nQuestion:"]
+            temperature=temperature,  # Lower temperature for more focused answers
+            top_p=0.85,  # Slightly lower top_p
+            stop=[
+                "</s>", "<|eot_id|>", "\n\nسوال:", "\n\nپرسش:", 
+                "\n\nQuestion:", "Human:", "user:", "\n\nمتن",
+                "اطلاعات مرجع:", "بر اساس"
+            ]
         )
         
         if response:
-            # پاک‌سازی پاسخ
+            # Additional cleaning specific to RAG responses
             response = response.strip()
             
-            # remove repeat prompt in answer
-            if "پاسخ:" in response:
-                response = response.split("پاسخ:")[-1].strip()
+            # Remove any remaining prompt artifacts
+            if "پاسخ" in response and ":" in response:
+                parts = response.split(":")
+                if len(parts) > 1:
+                    response = ":".join(parts[1:]).strip()
             
-            # need to be more...
+            # Remove common prefixes that might leak through
             prefixes_to_remove = [
-                "بر اساس اطلاعات ارائه شده، ",
-                "بر اساس متن، ",
-                "طبق اطلاعات، ",
-                "با توجه به متن، "
+                "کوتاه و مستقیم:",
+                "مستقیم:",
+                "کوتاه:",
+                "دقیق:"
             ]
             
             for prefix in prefixes_to_remove:
@@ -192,14 +247,15 @@ class LlamaClient:
         return None
     
     def batch_answer(self, questions_contexts: List[Dict], 
-                    max_tokens: int = 256, temperature: float = 0.1,
-                    delay_between_requests: float = 0.5) -> List[Optional[str]]:
-        """Batch answer"""
+                    max_tokens: int = 128, temperature: float = 0.05,
+                    delay_between_requests: float = 0.3) -> List[Optional[str]]:
+        """Enhanced batch answering with better parameters"""
         
         answers = []
         
         for i, item in enumerate(questions_contexts):
-            print(f"  Processing question {i+1}/{len(questions_contexts)}")
+            if i % 10 == 0:
+                print(f"  Processing question {i+1}/{len(questions_contexts)}")
             
             question = item['question']
             contexts = item['contexts']
@@ -219,14 +275,14 @@ class LlamaClient:
         return answers
     
     def get_server_info(self) -> Dict:
-        """دریافت اطلاعات server"""
+        """Get server information"""
         info = {
             "status": "unknown",
             "base_url": self.base_url,
             "endpoints": []
         }
         
-        # تست endpoints مختلف
+        # Test different endpoints
         endpoints_to_test = [
             "/health",
             "/v1/models", 
