@@ -1,0 +1,619 @@
+{
+  "word_chunks": {
+    "distiluse-base-multilingual-cased-v2_finetuned_exact_match": 0.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_f1_score": 0.016560992157052642,
+    "distiluse-base-multilingual-cased-v2_finetuned_precision": 0.022259115608196156,
+    "distiluse-base-multilingual-cased-v2_finetuned_recall": 0.03158729627436721,
+    "distiluse-base-multilingual-cased-v2_finetuned_bleu_score": 0.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_rouge_l": 0.014450524636758656,
+    "distiluse-base-multilingual-cased-v2_finetuned_context_precision": 1.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_context_recall": 1.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_avg_retrieval_time": 0.00021185398101806642,
+    "distiluse-base-multilingual-cased-v2_finetuned_avg_generation_time": 1.6280258774757386,
+    "distiluse-base-multilingual-cased-v2_finetuned_total_time": 1.6282377314567567,
+    "distiluse-base-multilingual-cased-v2_finetuned_failed_retrievals": 0,
+    "distiluse-base-multilingual-cased-v2_finetuned_failed_generations": 0,
+    "distiluse-base-multilingual-cased-v2_finetuned_success_rate": 1.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_num_samples": 100,
+    "distiluse-base-multilingual-cased-v2_finetuned_semantic_similarity": 0.3085753254592419,
+    "distiluse-base-multilingual-cased-v2_finetuned_answer_relevancy": 0.22105822103098036,
+    "multilingual-e5-base_finetuned_exact_match": 0.0,
+    "multilingual-e5-base_finetuned_f1_score": 0.014325583588303905,
+    "multilingual-e5-base_finetuned_precision": 0.018282279639100122,
+    "multilingual-e5-base_finetuned_recall": 0.028435980484893528,
+    "multilingual-e5-base_finetuned_bleu_score": 0.0,
+    "multilingual-e5-base_finetuned_rouge_l": 0.01197252544524343,
+    "multilingual-e5-base_finetuned_context_precision": 1.0,
+    "multilingual-e5-base_finetuned_context_recall": 1.0,
+    "multilingual-e5-base_finetuned_avg_retrieval_time": 0.0002649569511413574,
+    "multilingual-e5-base_finetuned_avg_generation_time": 1.652831139564514,
+    "multilingual-e5-base_finetuned_total_time": 1.6530960965156554,
+    "multilingual-e5-base_finetuned_failed_retrievals": 0,
+    "multilingual-e5-base_finetuned_failed_generations": 0,
+    "multilingual-e5-base_finetuned_success_rate": 1.0,
+    "multilingual-e5-base_finetuned_num_samples": 100,
+    "multilingual-e5-base_finetuned_semantic_similarity": 0.30275764456018806,
+    "multilingual-e5-base_finetuned_answer_relevancy": 0.21667585182003676,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_exact_match": 0.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_f1_score": 0.014574663324598655,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_precision": 0.01870388044158328,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_recall": 0.029685980484893525,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_bleu_score": 0.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_rouge_l": 0.012254707164492142,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_context_precision": 1.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_context_recall": 1.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_avg_retrieval_time": 0.00021862268447875977,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_avg_generation_time": 1.6760326290130616,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_total_time": 1.6762512516975403,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_failed_retrievals": 0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_failed_generations": 0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_success_rate": 1.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_num_samples": 100,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_semantic_similarity": 0.3158089278265834,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_answer_relevancy": 0.22556585714221
+  },
+  "word_chunks_comparison": {
+    "best_models": {
+      "exact_match": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.0
+      },
+      "f1_score": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.016560992157052642
+      },
+      "precision": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.022259115608196156
+      },
+      "recall": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.03158729627436721
+      },
+      "bleu_score": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.0
+      },
+      "rouge_l": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.014450524636758656
+      },
+      "semantic_similarity": {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.3158089278265834
+      },
+      "answer_relevancy": {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.22556585714221
+      },
+      "success_rate": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 1.0
+      },
+      "total_time": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 1.6282377314567567
+      }
+    },
+    "ranking": {
+      "exact_match": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.0
+        }
+      ],
+      "f1_score": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.016560992157052642
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.014574663324598655
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.014325583588303905
+        }
+      ],
+      "precision": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.022259115608196156
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.01870388044158328
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.018282279639100122
+        }
+      ],
+      "recall": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.03158729627436721
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.029685980484893525
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.028435980484893528
+        }
+      ],
+      "bleu_score": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.0
+        }
+      ],
+      "rouge_l": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.014450524636758656
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.012254707164492142
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.01197252544524343
+        }
+      ],
+      "semantic_similarity": [
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.3158089278265834
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.3085753254592419
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.30275764456018806
+        }
+      ],
+      "answer_relevancy": [
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.22556585714221
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.22105822103098036
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.21667585182003676
+        }
+      ],
+      "success_rate": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 1.0
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 1.0
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 1.0
+        }
+      ],
+      "total_time": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 1.6282377314567567
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 1.6530960965156554
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 1.6762512516975403
+        }
+      ]
+    },
+    "detailed_stats": {
+      "exact_match": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "f1_score": {
+        "mean": 0.015153746356651733,
+        "std": 0.0010002552127057905,
+        "min": 0.014325583588303905,
+        "max": 0.016560992157052642
+      },
+      "precision": {
+        "mean": 0.019748425229626516,
+        "std": 0.0017836500856287594,
+        "min": 0.018282279639100122,
+        "max": 0.022259115608196156
+      },
+      "recall": {
+        "mean": 0.029903085748051422,
+        "std": 0.0012956462538606436,
+        "min": 0.028435980484893528,
+        "max": 0.03158729627436721
+      },
+      "bleu_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "rouge_l": {
+        "mean": 0.01289258574883141,
+        "std": 0.001107636166063125,
+        "min": 0.01197252544524343,
+        "max": 0.014450524636758656
+      },
+      "semantic_similarity": {
+        "mean": 0.3090472992820044,
+        "std": 0.005338605822494137,
+        "min": 0.30275764456018806,
+        "max": 0.3158089278265834
+      },
+      "answer_relevancy": {
+        "mean": 0.22109997666440906,
+        "std": 0.0036294495732144107,
+        "min": 0.21667585182003676,
+        "max": 0.22556585714221
+      },
+      "success_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "total_time": {
+        "mean": 1.652528359889984,
+        "std": 0.019605548111612553,
+        "min": 1.6282377314567567,
+        "max": 1.6762512516975403
+      }
+    }
+  },
+  "sentence_chunks": {
+    "distiluse-base-multilingual-cased-v2_finetuned_exact_match": 0.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_f1_score": 0.014297719249714583,
+    "distiluse-base-multilingual-cased-v2_finetuned_precision": 0.014372335276544568,
+    "distiluse-base-multilingual-cased-v2_finetuned_recall": 0.030888902562815606,
+    "distiluse-base-multilingual-cased-v2_finetuned_bleu_score": 0.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_rouge_l": 0.011708681313327161,
+    "distiluse-base-multilingual-cased-v2_finetuned_context_precision": 1.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_context_recall": 1.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_avg_retrieval_time": 0.00019162178039550782,
+    "distiluse-base-multilingual-cased-v2_finetuned_avg_generation_time": 1.623381507396698,
+    "distiluse-base-multilingual-cased-v2_finetuned_total_time": 1.6235731291770934,
+    "distiluse-base-multilingual-cased-v2_finetuned_failed_retrievals": 0,
+    "distiluse-base-multilingual-cased-v2_finetuned_failed_generations": 0,
+    "distiluse-base-multilingual-cased-v2_finetuned_success_rate": 1.0,
+    "distiluse-base-multilingual-cased-v2_finetuned_num_samples": 100,
+    "distiluse-base-multilingual-cased-v2_finetuned_semantic_similarity": 0.27021302957087756,
+    "distiluse-base-multilingual-cased-v2_finetuned_answer_relevancy": 0.20836887136567384,
+    "multilingual-e5-base_finetuned_exact_match": 0.0,
+    "multilingual-e5-base_finetuned_f1_score": 0.013146358605756761,
+    "multilingual-e5-base_finetuned_precision": 0.014343845965355937,
+    "multilingual-e5-base_finetuned_recall": 0.028150266199179243,
+    "multilingual-e5-base_finetuned_bleu_score": 0.0,
+    "multilingual-e5-base_finetuned_rouge_l": 0.0119549553371102,
+    "multilingual-e5-base_finetuned_context_precision": 1.0,
+    "multilingual-e5-base_finetuned_context_recall": 1.0,
+    "multilingual-e5-base_finetuned_avg_retrieval_time": 0.00018526077270507812,
+    "multilingual-e5-base_finetuned_avg_generation_time": 1.6510147213935853,
+    "multilingual-e5-base_finetuned_total_time": 1.6511999821662904,
+    "multilingual-e5-base_finetuned_failed_retrievals": 0,
+    "multilingual-e5-base_finetuned_failed_generations": 0,
+    "multilingual-e5-base_finetuned_success_rate": 1.0,
+    "multilingual-e5-base_finetuned_num_samples": 100,
+    "multilingual-e5-base_finetuned_semantic_similarity": 0.2764355533197522,
+    "multilingual-e5-base_finetuned_answer_relevancy": 0.20976971563883126,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_exact_match": 0.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_f1_score": 0.01500530771026821,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_precision": 0.01551035010951516,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_recall": 0.03255556922948227,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_bleu_score": 0.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_rouge_l": 0.013451587596560104,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_context_precision": 1.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_context_recall": 1.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_avg_retrieval_time": 0.0002805924415588379,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_avg_generation_time": 1.6375641107559205,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_total_time": 1.6378447031974792,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_failed_retrievals": 0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_failed_generations": 0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_success_rate": 1.0,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_num_samples": 100,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_semantic_similarity": 0.2672589100524783,
+    "paraphrase-multilingual-MiniLM-L12-v2_finetuned_answer_relevancy": 0.19693175978027283
+  },
+  "sentence_chunks_comparison": {
+    "best_models": {
+      "exact_match": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.0
+      },
+      "f1_score": {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.01500530771026821
+      },
+      "precision": {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.01551035010951516
+      },
+      "recall": {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.03255556922948227
+      },
+      "bleu_score": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.0
+      },
+      "rouge_l": {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.013451587596560104
+      },
+      "semantic_similarity": {
+        "model": "multilingual-e5-base_finetuned",
+        "score": 0.2764355533197522
+      },
+      "answer_relevancy": {
+        "model": "multilingual-e5-base_finetuned",
+        "score": 0.20976971563883126
+      },
+      "success_rate": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 1.0
+      },
+      "total_time": {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 1.6235731291770934
+      }
+    },
+    "ranking": {
+      "exact_match": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.0
+        }
+      ],
+      "f1_score": [
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.01500530771026821
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.014297719249714583
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.013146358605756761
+        }
+      ],
+      "precision": [
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.01551035010951516
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.014372335276544568
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.014343845965355937
+        }
+      ],
+      "recall": [
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.03255556922948227
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.030888902562815606
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.028150266199179243
+        }
+      ],
+      "bleu_score": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.0
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.0
+        }
+      ],
+      "rouge_l": [
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.013451587596560104
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.0119549553371102
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.011708681313327161
+        }
+      ],
+      "semantic_similarity": [
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.2764355533197522
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.27021302957087756
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.2672589100524783
+        }
+      ],
+      "answer_relevancy": [
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 0.20976971563883126
+        },
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 0.20836887136567384
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 0.19693175978027283
+        }
+      ],
+      "success_rate": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 1.0
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 1.0
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 1.0
+        }
+      ],
+      "total_time": [
+        {
+          "model": "distiluse-base-multilingual-cased-v2_finetuned",
+          "score": 1.6235731291770934
+        },
+        {
+          "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+          "score": 1.6378447031974792
+        },
+        {
+          "model": "multilingual-e5-base_finetuned",
+          "score": 1.6511999821662904
+        }
+      ]
+    },
+    "detailed_stats": {
+      "exact_match": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "f1_score": {
+        "mean": 0.014149795188579851,
+        "std": 0.0007660870660649144,
+        "min": 0.013146358605756761,
+        "max": 0.01500530771026821
+      },
+      "precision": {
+        "mean": 0.014742177117138556,
+        "std": 0.0005433048376222575,
+        "min": 0.014343845965355937,
+        "max": 0.01551035010951516
+      },
+      "recall": {
+        "mean": 0.030531579330492373,
+        "std": 0.001816119235525338,
+        "min": 0.028150266199179243,
+        "max": 0.03255556922948227
+      },
+      "bleu_score": {
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "rouge_l": {
+        "mean": 0.012371741415665822,
+        "std": 0.0007701573668160499,
+        "min": 0.011708681313327161,
+        "max": 0.013451587596560104
+      },
+      "semantic_similarity": {
+        "mean": 0.2713024976477027,
+        "std": 0.003824735366141183,
+        "min": 0.2672589100524783,
+        "max": 0.2764355533197522
+      },
+      "answer_relevancy": {
+        "mean": 0.20502344892825933,
+        "std": 0.005750198032540045,
+        "min": 0.19693175978027283,
+        "max": 0.20976971563883126
+      },
+      "success_rate": {
+        "mean": 1.0,
+        "std": 0.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "total_time": {
+        "mean": 1.637539271513621,
+        "std": 0.011280683132588615,
+        "min": 1.6235731291770934,
+        "max": 1.6511999821662904
+      }
+    }
+  },
+  "evaluation_metadata": {
+    "timestamp": "20250830_000257",
+    "llama_url": "http://127.0.0.1:8080",
+    "num_test_questions": 100,
+    "models_evaluated": [
+      "distiluse-base-multilingual-cased-v2_finetuned",
+      "multilingual-e5-base_finetuned",
+      "paraphrase-multilingual-MiniLM-L12-v2_finetuned"
+    ],
+    "chunk_types": [
+      "word",
+      "sentence"
+    ],
+    "sample_size": 100
+  }
+}

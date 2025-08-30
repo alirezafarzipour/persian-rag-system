@@ -1,0 +1,73 @@
+{
+  "pdf_file": "data/raw/Drugs.pdf",
+  "model_used": "distiluse-base-multilingual-cased-v2_finetuned",
+  "device_used": "cuda",
+  "processing_stats": {
+    "word_chunks_count": 125,
+    "sentence_chunks_count": 121,
+    "word_chunks_stats": {
+      "total_chunks": 125,
+      "avg_words_per_chunk": 149.336,
+      "min_words_per_chunk": 92,
+      "max_words_per_chunk": 150,
+      "total_words": 18667,
+      "chunk_type": "word_based"
+    },
+    "sentence_chunks_stats": {
+      "total_chunks": 121,
+      "avg_words_per_chunk": 105.69421487603306,
+      "min_words_per_chunk": 29,
+      "max_words_per_chunk": 407,
+      "total_words": 12789,
+      "chunk_type": "sentence_based"
+    }
+  },
+  "embeddings_stats": {
+    "word_embeddings_shape": [
+      125,
+      512
+    ],
+    "sentence_embeddings_shape": [
+      121,
+      512
+    ],
+    "embedding_dimension": 512,
+    "memory_usage": {
+      "word_embeddings_memory_mb": 0.244140625,
+      "sentence_embeddings_memory_mb": 0.236328125,
+      "total_embeddings_memory_mb": 0.48046875
+    }
+  },
+  "index_creation_time": {
+    "faiss_time": 0.002974987030029297,
+    "chroma_time": 1.6498956680297852
+  },
+  "test_results": {
+    "test_query": "دارو چیست؟",
+    "word_faiss_distances": [
+      0.27873075008392334,
+      0.3769051432609558,
+      0.3990403413772583
+    ],
+    "sentence_faiss_distances": [
+      0.3322067856788635,
+      0.4418365955352783,
+      0.446541965007782
+    ]
+  },
+  "optimization_settings": {
+    "embedding_batch_size": 16,
+    "faiss_index_type": "auto",
+    "chroma_batch_size": 500
+  },
+  "success_flags": {
+    "word_chunks_created": true,
+    "sentence_chunks_created": true,
+    "word_embeddings_generated": true,
+    "sentence_embeddings_generated": true,
+    "word_faiss_created": true,
+    "sentence_faiss_created": true,
+    "word_chroma_created": true,
+    "sentence_chroma_created": true
+  }
+}

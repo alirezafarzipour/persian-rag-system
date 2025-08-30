@@ -1,0 +1,20 @@
+{
+  "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2": {
+    "status": "success",
+    "save_path": "models/paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+    "training_time": 654.1845557689667,
+    "num_train_examples": 72550
+  },
+  "sentence-transformers/distiluse-base-multilingual-cased-v2": {
+    "status": "success",
+    "save_path": "models/distiluse-base-multilingual-cased-v2_finetuned",
+    "training_time": 806.2061247825623,
+    "num_train_examples": 72550
+  },
+  "intfloat/multilingual-e5-base": {
+    "status": "success",
+    "save_path": "models/multilingual-e5-base_finetuned",
+    "training_time": 2715.636326789856,
+    "num_train_examples": 72550
+  }
+}

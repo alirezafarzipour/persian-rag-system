@@ -1,0 +1,128 @@
+{
+  "best_models": {
+    "exact_match": {
+      "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+      "score": 0.42585276388711873
+    },
+    "f1_score": {
+      "model": "multilingual-e5-base_finetuned",
+      "score": 0.5992068024197429
+    },
+    "precision": {
+      "model": "multilingual-e5-base_finetuned",
+      "score": 0.6674064488125419
+    },
+    "recall": {
+      "model": "multilingual-e5-base_finetuned",
+      "score": 0.6443898987249939
+    },
+    "cosine_similarity": {
+      "model": "distiluse-base-multilingual-cased-v2_finetuned",
+      "score": 0.9734413623809814
+    }
+  },
+  "ranking": {
+    "exact_match": [
+      {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.42585276388711873
+      },
+      {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.41014208890104653
+      },
+      {
+        "model": "multilingual-e5-base_finetuned",
+        "score": 0.34650901251110455
+      }
+    ],
+    "f1_score": [
+      {
+        "model": "multilingual-e5-base_finetuned",
+        "score": 0.5992068024197429
+      },
+      {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.49729331979188396
+      },
+      {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.4540812978435132
+      }
+    ],
+    "precision": [
+      {
+        "model": "multilingual-e5-base_finetuned",
+        "score": 0.6674064488125419
+      },
+      {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.5697161363165683
+      },
+      {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.47378536926955406
+      }
+    ],
+    "recall": [
+      {
+        "model": "multilingual-e5-base_finetuned",
+        "score": 0.6443898987249939
+      },
+      {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.5165165376223053
+      },
+      {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.4489040212621468
+      }
+    ],
+    "cosine_similarity": [
+      {
+        "model": "distiluse-base-multilingual-cased-v2_finetuned",
+        "score": 0.9734413623809814
+      },
+      {
+        "model": "paraphrase-multilingual-MiniLM-L12-v2_finetuned",
+        "score": 0.9687337279319763
+      },
+      {
+        "model": "multilingual-e5-base_finetuned",
+        "score": 0.9673388600349426
+      }
+    ]
+  },
+  "summary": {
+    "exact_match": {
+      "mean": 0.3941679550997566,
+      "std": 0.03430488238944833,
+      "min": 0.34650901251110455,
+      "max": 0.42585276388711873
+    },
+    "f1_score": {
+      "mean": 0.5168604733517134,
+      "std": 0.060841368291932055,
+      "min": 0.4540812978435132,
+      "max": 0.5992068024197429
+    },
+    "precision": {
+      "mean": 0.5703026514662214,
+      "std": 0.07904656269509164,
+      "min": 0.47378536926955406,
+      "max": 0.6674064488125419
+    },
+    "recall": {
+      "mean": 0.5366034858698153,
+      "std": 0.08106086679887907,
+      "min": 0.4489040212621468,
+      "max": 0.6443898987249939
+    },
+    "cosine_similarity": {
+      "mean": 0.9698379834493002,
+      "std": 0.0026108324223648644,
+      "min": 0.9673388600349426,
+      "max": 0.9734413623809814
+    }
+  }
+}
